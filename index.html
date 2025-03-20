@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  </head>
+  <body>
+    <div class="container99">
+      <div class="nav-bar">
+        <h1 class="title">The <span>Coffee House</span></h1>
+        <p>Coffee Shop</p>
+        <ul class="menu">
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./product.html">PRODUCT</a></li>
+          <li><a href="./service.html">SERVICES</a></li>
+          <li><a href="./contact.html">CONTACT</a></li>
+          <li><a href="./about.html">ABOUT</a></li>
+        </ul>
+      </div>
+
+      <div class="home h-screen">
+        <h1 class="title-1">
+          Crafting <span> Moments, </span> Brewing Memories.<br />
+        </h1>
+        <p>Welcome to our cozy coffee haven!<br/>
+          Here, every cup is brewed with care and every sip tells a story.</p>
+          <a href="./product.html">
+          <button type="button" >Shop Now</button>
+          </a>
+        </div>
+    </div>
+        <section class="container mx-auto max-w-7xl text-center flex justify-center items-center flex-col h-screen text-black  w-full">
+          <h2 class="text-4xl font-bold text-gray-50 mb-8">Our Products</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                  <img src="./images/cappucino.jpg" alt="Cappuccino" class="w-full h-60 object-cover rounded-md mb-4">
+
+                  <h3 class="text-2xl font-semibold mb-2">Cappuccino</h3>
+                  <p class="text-gray-600 mb-4">Frothy, balanced, and delightfully robust.</p>
+                  <button class="bg-yellow-300 text-black px-4 py-2 rounded-lg hover:bg-yellow-400">Order Now</button>
+              </div>
+              <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                  <img src="./images/cortado.jpg" alt="Cortado" class="w-full h-60 object-cover rounded-md mb-4">
+                  <h3 class="text-2xl font-semibold mb-2">Cortado</h3>
+                  <p class="text-gray-600 mb-4">A Perfectly balanced between bold espresso and creamy milk.</p>
+                  <button class="bg-yellow-300 text-black px-4 py-2 rounded-lg hover:bg-yellow-400">Order Now</button>
+              </div>
+              <div class="bg-gray-100 p-6 max-h-[600px] rounded-lg shadow-md">
+                  <img src="./images/Cold Brew.jpg" alt="Cold Brew" class="w-full h-60 object-cover rounded-md mb-4">
+                  <h3 class="text-2xl font-semibold mb-2">Cold Brew</h3>
+                  <p class="text-gray-600 mb-4">High-quality beans sourced from sustainable farms.</p>
+                  <button class="bg-yellow-300 text-black px-4 py-2 rounded-lg hover:bg-yellow-400">Order Now</button>
+              </div>
+              
+              
+          </div>
+      </section>
+        
+
+      <div class="container1 bg-gray-900 p-12 rounded-2xl shadow-2xl max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold mb-6 text-center text-white">Contact Us</h2>
+        <p class="text-gray-400 text-center mb-8">We would love to hear from you! Feel free to reach out.</p>
+        
+        <form id="contactForm" class="space-y-6">
+            <input type="text" id="name" placeholder="Your Name" required
+                class="w-full p-4 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            
+            <input type="email" id="email" placeholder="Your Email" required
+                class="w-full p-4 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            
+            <textarea id="message" rows="8" placeholder="Your Message" required
+                class="w-full p-4 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            
+            <button type="submit"
+                class="w-full bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 transition duration-300">
+                Send Message
+            </button>
+        </form>
+        
+        <p id="responseMessage" class="text-green-400 mt-6 text-center hidden">Message sent successfully!</p>
+    </div>
+    
+    
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                document.getElementById('responseMessage').style.display = 'block';
+                document.getElementById('contactForm').reset();
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+    </script>
+      
+    <script>
+      function redirectToShop() {
+          window.location.href = "./shop.html"; 
+      }
+  </script>
+  </body>
+</html>

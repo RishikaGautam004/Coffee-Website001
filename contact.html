@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container1 {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #ffcc00;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #ff9900;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-white fixed top-0 left-0 w-full shadow-md z-50">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">The Coffee House</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="text-gray-600 hover:text-black">HOME</a></li>
+                    <li><a href="products.html" class="text-gray-600 hover:text-black">PRODUCT</a></li>
+                    <li><a href="service.html" class="text-gray-600 hover:text-black">SERVICES</a></li>
+                    <li><a href="contact.html" class="text-gray-600 hover:text-black">CONTACT</a></li>
+                    <li><a href="about.html" class="text-gray-600 hover:text-black">ABOUT</a></li>
+    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container1">
+        <h2>Contact Us</h2>
+        <p>We would love to hear from you! Feel free to reach out.</p>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="responseMessage" style="color: green; display: none;">Message sent successfully!</p>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                document.getElementById('responseMessage').style.display = 'block';
+                document.getElementById('contactForm').reset();
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+    </script>
+</body>
+</html>
