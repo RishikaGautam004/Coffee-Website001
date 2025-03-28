@@ -1,75 +1,313 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Coffee House</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-
+    <title>About - The Coffee House</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5dc;
-            color: #4b382a;
+            background-color: #f9f5e9;
+            color: #5a3921;
         }
-        .container1 {
-            max-width: 800px;
-            margin: 100px auto 20px; /* Adjusted margin to prevent overlap */
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+        
+        .navbar {
+            background-color: #5a3921;
+            color: white;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .brand {
+            font-size: 28px;
+            font-weight: bold;
+            margin-left: 40px;
+        }
+        
+        .nav-links {
+            display: flex;
+            margin-right: 40px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+        
+        .hero {
+    height: 400px;
+    background-image: url('/images/coffee house.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .section-reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .section-text {
+            flex: 1;
+        }
+        
+        .section-image {
+            flex: 1;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(90, 57, 33, 0.2);
+        }
+        
+        .section-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #5a3921;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #d4a76a;
+            margin-top: 10px;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #5a3921;
+        }
+        
+        .features {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(90, 57, 33, 0.1);
+        }
+        
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon {
+            background-color: #d4a76a;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .cta {
+            text-align: center;
+            background-color: #f0e6d6;
+            padding: 60px 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        
+        .cta h2 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta h2:after {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #5a3921;
+            color: white;
+            padding: 14px 28px;
+            font-size: 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #d4a76a;
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            background-color: #5a3921;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+            }
+            
+            .section-reverse {
+                flex-direction: column;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Fixed Navigation Bar -->
-    <header class="bg-white fixed top-0 left-0 w-full shadow-md z-50">
-        <div class="container mx-auto flex justify-between items-center p-4">
-            <a href="index.html" class="text-2xl font-bold text-gray-800">The Coffee House</a>
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="index.html" class="text-gray-600 hover:text-black">HOME</a></li>
-                    <li><a href="products.html" class="text-gray-600 hover:text-black">PRODUCT</a></li>
-                    <li><a href="service.html" class="text-gray-600 hover:text-black">SERVICES</a></li>
-                    <li><a href="contact.html" class="text-gray-600 hover:text-black">CONTACT</a></li>
-                    <li><a href="about.html" class="text-gray-600 hover:text-black">ABOUT</a></li>
-                </ul>
-            </nav>
+    <div class="navbar">
+        <div class="brand">The Coffee House</div>
+        <div class="nav-links">
+            <a href="/index.html">HOME</a>
+            <a href="/product.html">PRODUCTS</a>
+            <a href="/service.html">SERVICES</a>
+            <a href="/contact.html">CONTACT</a>
+            <a href="/about.html">ABOUT</a>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container1">
-        <h1 class="text-center text-3xl font-bold mb-4">About Coffee House</h1>
-        
-        <h2 class="text-2xl font-semibold mt-6">Our Story</h2>
-        <p class="text-lg leading-relaxed">
-            Welcome to our Coffee House, where passion meets the perfect brew. Our journey started with a simple love for coffee and a dream to create a space where people can come together, relax, and enjoy the finest coffee sourced from around the world.
-        </p>
-        
-        <h2 class="text-2xl font-semibold mt-6">Our Mission</h2>
-        <p class="text-lg leading-relaxed">
-            We are committed to providing high-quality, ethically sourced coffee while fostering a warm and inviting atmosphere. Every cup we serve tells a story of craftsmanship, dedication, and sustainability.
-        </p>
-
-        <h2 class="text-2xl font-semibold mt-6">Why Choose Us?</h2>
-        <ul class="list-disc pl-6 text-lg leading-relaxed">
-            <li>Premium, hand-selected coffee beans</li>
-            <li>Expertly crafted espresso and brewed coffee</li>
-            <li>Eco-friendly and sustainable sourcing</li>
-            <li>A cozy and welcoming environment</li>
-        </ul>
-
-        <h2 class="text-2xl font-semibold mt-6">Visit Us</h2>
-        <p class="text-lg leading-relaxed">
-            Come experience the aroma and taste of freshly brewed perfection.<br>
-            Thank you for being part of our journey!
-        </p>
     </div>
+    
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
 
+            <h1>About Coffee House</h1>
+            <p>Our passion, our story, our coffee.</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="section">
+            <div class="section-text">
+                <h2>Our Story</h2>
+                <p>Welcome to our Coffee House, where passion meets the perfect brew. Our journey started with a simple love for coffee and a dream to create a space where people can come together, relax, and enjoy the finest coffee sourced from around the world.</p>
+                <p>Founded in 2010 by coffee enthusiasts who traveled the globe in search of the perfect cup, we've grown from a small corner shop to a beloved community gathering place while maintaining our commitment to quality and authenticity.</p>
+            </div>
+            <div class="section-image">
+                <img src="/images/about.jpg" alt="Our coffee shop story">
+            </div>
+        </div>
+        
+        <div class="section section-reverse">
+            <div class="section-text">
+                <h2>Our Mission</h2>
+                <p>We are committed to providing high-quality, ethically sourced coffee while fostering a warm and inviting atmosphere. Every cup we serve tells a story of craftsmanship, dedication, and sustainability.</p>
+                <p>We believe that great coffee is more than just a beverage—it's an experience that brings people together. That's why we focus on creating an environment where conversations flow as freely as our carefully crafted coffee.</p>
+            </div>
+            <div class="section-image">
+                <img src="/images/mission.jpg" alt="Coffee beans being hand-selected">
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>Why Choose Us?</h2>
+            <ul class="feature-list">
+                <li class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Premium, hand-selected coffee beans</h3>
+                        <p>We travel to coffee farms around the world to personally select the finest beans for our customers.</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Expertly crafted espresso and brewed coffee</h3>
+                        <p>Our baristas undergo extensive training to perfect the art of coffee preparation.</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Eco-friendly and sustainable sourcing</h3>
+                        <p>We partner with farmers who practice sustainable agriculture and fair trade principles.</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>A cozy and welcoming environment</h3>
+                        <p>Our shop is designed to be your home away from home, perfect for work, study, or catching up with friends.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="cta">
+            <h2>Visit Us</h2>
+            <p>Come experience the aroma and taste of freshly brewed perfection.</p>
+            <p>Thank you for being part of our journey!</p>
+            <a href="#" class="btn">Find Our Location</a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <footer class="bg-black bg-opacity-75 text-white py-4 text-center">
+            <p class="text-sm">&copy; 2025 The Coffee House. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
